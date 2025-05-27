@@ -66,7 +66,7 @@ seed = 42  # Apenas para garantir reprodutibilidade, None = aleatório
 
 # Treinamento e teste
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.3, random_state=None
+    X, y, test_size=0.3, random_state=seed
 )
 
 classifiers = {
@@ -90,7 +90,7 @@ for idx, (name, classifier) in enumerate(classifiers.items()):
     if idx != 0:
         axes[0, idx].set_ylabel("")
 
-    # Métricas de avaliação (mantém como está)
+    # Métricas de avaliação
     accuracy = accuracy_score(y_test, y_pred)
     precision = precision_score(y_test, y_pred)
     recall = recall_score(y_test, y_pred)
