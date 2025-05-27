@@ -132,4 +132,7 @@ for idx, (name, classifier) in enumerate(classifiers.items()):
         print(f"Não foi possível plotar curva ROC para {name}: {e}")
 
 plt.tight_layout()
+plt.savefig("classifiers_performance.png")
+plt.suptitle("Desempenho dos Classificadores", fontsize=16)
+plt.subplots_adjust(top=0.9)  # Ajusta o título para não sobrepor os subplots
 plt.show()
